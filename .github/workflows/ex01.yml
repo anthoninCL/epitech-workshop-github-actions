@@ -19,8 +19,8 @@ on :
 
 jobs :
   build :
-    name: Ex01
     runs-on : ubuntu-latest
     steps:
-      - echo 'Hello, World! Today is ${{date}}.'
+      - name: Ex01
+        run: echo 'Hello, World! Today is ${date + "%m-%d-%y %H:%M:%S"}.'
      
