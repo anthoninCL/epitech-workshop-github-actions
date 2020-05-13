@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run
-      run: curl -Is http://localhost:4242 | grep "HTTP/1.1 200 OK"
+      run: |
+        curl -u $NGINX_USER:${{secret.NGINX_PASSWORD}}
+        curl -Is http://localhost:4242 | grep "HTTP/1.1 200 OK"
       env:
         NGINX_USER: john
