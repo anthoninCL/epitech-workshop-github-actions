@@ -1,0 +1,31 @@
+on :
+  push:
+    branches:
+      - master
+  watch :
+      types : [ started ] # Star event
+
+jobs :
+  macos :
+    runs-on : macos-latest
+    
+    steps:
+      - name: Print macOs version
+        run: |
+          sw_vers -productVersion
+  
+  ubuntu:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print ubuntu version
+        run: |
+          lsb_release -rs
+  
+  windows:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Print windows version
+        run: |
+          (Get-ComputerInfo).OsHardWareAbstractionLayer
