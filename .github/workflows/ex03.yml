@@ -1,0 +1,31 @@
+on :
+  push:
+    branches: 
+      - master
+  watch :
+      types : [ started ] # Star event
+
+jobs :
+  my_alpine :
+    runs-on : ubuntu-latest
+    container: alpine
+    
+    steps:
+      - name: Print alpine version
+        run: echo "$(source /etc/os-release && echo $VERSION_ID)"
+  
+  my_archlinux:
+    runs-on: ubuntu-latest
+    container: archlinux
+    
+    steps:
+      - name: Print archlinux version
+        run: echo "$(source /etc/os-release && echo $VERSION_ID)"
+  
+  my_fedora:
+    runs-on: ubuntu-latest
+    container: fedora
+    
+    steps:
+      - name: Print fedora version
+        run: echo "$(source /etc/os-release && echo $VERSION_ID)"
