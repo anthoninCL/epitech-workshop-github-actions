@@ -1,7 +1,4 @@
 on :
-  push:
-    branches: 
-      - master
   watch :
       types : [ started ] # Star event
 
