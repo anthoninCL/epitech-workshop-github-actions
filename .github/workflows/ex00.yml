@@ -1,1 +1,6 @@
+on :
+  watch :
+    types : [ started ] # Star event
 
+jobs :
+  run : echo 'Hello, World!'
