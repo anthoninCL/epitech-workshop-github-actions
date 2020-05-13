@@ -1,0 +1,20 @@
+on:
+  push:
+    branches: [ master ]
+  watch:
+    types: [ started ] # Star event
+    
+jobs:
+  my_s:
+    services:
+      nginx:
+        
+        image: mrsquaare/nginx-htpasswd
+        ports:
+          - 4242:80
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run
+      run: curl -Is http://localhost:4242 | grep "HTTP/1.1 200 OK"
+      env:
+        NGINX_USER: john
