@@ -22,5 +22,5 @@ jobs :
     name: Ex01
     runs-on : ubuntu-latest
     steps:
-      - echo 'Hello, World! Today is ${{date + "%m-%d-%y %H:%M:%S"}}.'
+      - echo 'Hello, World! Today is ${{date}}.'
      
