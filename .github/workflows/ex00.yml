@@ -3,4 +3,8 @@ on :
     types : [ started ] # Star event
 
 jobs :
-  run : echo 'Hello, World!'
+  build :
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run : echo 'Hello, World!'
