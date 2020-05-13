@@ -1,0 +1,26 @@
+on :
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+    types:
+      - ready_for_review
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+  watch :
+      types : [ started, gollum] # Star event
+  schedule :
+    - cron: 0 0 1 * *
+
+jobs :
+  build :
+    name: Ex01
+    runs-on : ubuntu-latest
+    steps:
+      - echo 'Hello, World! Today is ${{date + "%m-%d-%y %H:%M:%S"}}.'
+     
